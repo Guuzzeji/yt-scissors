@@ -79,7 +79,7 @@ getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 **What a object from the array will look like** 
 
 ```json
-ListVideo_Object {
+"ListVideo_Object": {
     "title": "{String} Title of the chapter",
     "start_time": "{String|Number} Start time code of the chapter",
     "end_time": "{String|Number} End time code of the chapter"
@@ -133,7 +133,7 @@ cutVideo ({
 **What a object from the array will look like** 
 
 ```json
-SaveVideos_Object {
+"SaveVideos_Object": {
     "title": "{String} Title of the chapter",
     "videoData": "{Buffer} A buffer of the chapter video"
 }
