@@ -80,9 +80,9 @@ getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 
 ```json
 ListVideo_Object: {
-    "title" -  {String} Title of the chapter,
-    "start_time" - {String|Number} Start time code of the chapter,
-    "end_time" - {String|Number} End time code of the chapter
+    "title": "{String} Title of the chapter",
+    "start_time": "{String|Number} Start time code of the chapter",
+    "end_time": "{String|Number} End time code of the chapter"
 }
 ```
 
@@ -134,8 +134,8 @@ cutVideo ({
 
 ```json
 SaveVideos_Object: {
-    "title" -  {String} Title of the chapter,
-    "videoData" - {Buffer} A buffer of the chapter video
+    "title": "{String} Title of the chapter",
+    "videoData": "{Buffer} A buffer of the chapter video"
 }
 ```
 
