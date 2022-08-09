@@ -69,11 +69,15 @@ main();
 getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 ```
 
-`@param {String} url` - Url of YouTube video
+| Syntax      | Name | Data Type | Description |
+| ----------- | ----------- | ----------- | ----------- 
+| @param      | url       | String | Url of YouTube video
+| @param      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time codes. **(default is "chapters")**
 
-`@param {"chapters" | "comment" | "description"} type` - The data you want to parse to get video time codes. **(default is "chapters")**
+### **@Returns**
 
-`@return {Promise<Array<ListVideo_Object>>}` - Returns array of start and end time for each chapter video. **Will return empty array if time code couldn't be generated.**
+`@return {Promise<Array<ListVideo_Object>>}` 
+- Returns array of start and end time for each chapter video. **Will return empty array if time code couldn't be generated.**
 
 
 **What a object from the array will look like** 
@@ -88,7 +92,7 @@ getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 
 **What Does it do?**
 
-> **(Important)** Generated time codes from description and comment works about 90% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
+> **(Important)** Generated time codes from description and comment works about 85% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
 
 * Pick where to get video time codes and generate array from that.
 * Can generate time codes from a video's chapters, comment, or description.
@@ -111,23 +115,21 @@ cutVideo ({
     } })
 ```
 
-`@param {String | Buffer} video` - Video path as a string or a buffer of the video
+| Syntax      | Name        | Data Type   | Description
+| ----------- | ----------- | ----------- | ----------- |
+| @param      | video       | String or Buffer | Video path as a string or a buffer of the video
+| @param      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
+| @param   | DisableDownloadLogs | Boolean | True = disable download logs, false = show download logs. **(default is false)**
+| @param    | ffmpegOptions | Object | FFmpeg commands and options.
+| @param    | ffmpegOptions.crf | String | Quality of the video. Lower numbers the better looking the video. **(default is 25)**
+| @param    | ffmpegOptions.preset | String | Speed of encoding video. **(default is ultrafast)**
+| @param    | ffmpegOptions.ffmpegCmds | Array | Add any other ffmpeg commands as a array. Make sure they are String values.
+| @param    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
 
-`@param {String} ffmpegPath` - Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
+### **@Returns**
 
-`@param {Boolean}  DisableDownloadLogs` - True = disable download logs, false = show download logs. **(default is false)**
-
-`@param {Object} ffmpegOptions` - FFmpeg commands and options.
-
-`@param {String}  ffmpegOptions.crf` - Quality of the video. Lower numbers the better looking the video. **(default is 25)**
-
-`@param {String}  ffmpegOptions.preset` - Speed of encoding video. **(default is ultrafast)**
-
-`@param {Array}  ffmpegOptions.ffmpegCmds` - Add any other ffmpeg commands as a array. Make sure they are String values.
-
-`@param {Boolean}  ffmpegOptions.ffmpegHide` - Hide ffmpeg process from being shown in the terminal. **(default is false)**
-
-`@returns {Promise<Array<SaveVideos_Object>>}` - Returns array object of videos. Videos are store as buffers.
+`@returns {Promise<Array<SaveVideos_Object>>}` 
+- Returns array object of videos. Videos are store as buffers.
 
 
 **What a object from the array will look like** 
