@@ -59,11 +59,14 @@ async function main() {
 main();
 ```
 
+<br>
 
 # API
 
 "getTimeStampList" 
 ------------------
+
+> **(Important)** Generated time codes from description and comment works about 85% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
 
 ```js
 getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
@@ -92,14 +95,17 @@ getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 
 **What Does it do?**
 
-> **(Important)** Generated time codes from description and comment works about 85% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
-
-* Pick where to get video time codes and generate array from that.
+* Picks where to get video time codes and generate array from that.
 * Can generate time codes from a video's chapters, comment, or description.
 
+<br>
 
 "cutVideo"
 ----------
+
+> **(Important)** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself.
+
+> **FFmpeg Downloads** : https://ffmpeg.org/download.html
 
 ```js
 cutVideo ({
@@ -145,14 +151,11 @@ cutVideo ({
 
 **What does it do?**
 
-> **(Important)** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself.
-
-> **FFmpeg Downloads** : https://ffmpeg.org/download.html
-
 * Using FFmpeg, trims videos into different chapters and encodes theme base on the time codes given.
 * Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
 * **Return** a array of videos with title and a buffer of the trim down video
 
+<br>
 
 # Helpful Infomation
 
