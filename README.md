@@ -72,10 +72,10 @@ main();
 getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
 ```
 
-| Syntax      | Name | Data Type | Description |
+| Required      | Name | Data Type | Description |
 | ----------- | ----------- | ----------- | ----------- 
-| @param      | url       | String | Url of YouTube video
-| @param      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time codes. **(default is "chapters")**
+| Yes      | url       | String | Url of YouTube video
+| Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time codes. **(default is "chapters")**
 
 ### **@Returns**
 
@@ -121,17 +121,17 @@ cutVideo ({
     } })
 ```
 
-| Syntax      | Name        | Data Type   | Description
+| Required      | Name        | Data Type   | Description
 | ----------- | ----------- | ----------- | ----------- |
-| @param      | video       | String or Buffer | Video path as a string or a buffer of the video
-| @param      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
-| @param      | chapters       | Array<ListVideo_Object>| List of chapters you want to extract from original video get this from "getVideoList()" function
-| @param   | DisableDownloadLogs | Boolean | True = disable download logs, false = show download logs. **(default is false)**
-| @param    | ffmpegOptions | Object | FFmpeg commands and options.
-| @param    | ffmpegOptions.crf | String | Quality of the video. Lower numbers the better looking the video. **(default is 25)**
-| @param    | ffmpegOptions.preset | String | Speed of encoding video. **(default is ultrafast)**
-| @param    | ffmpegOptions.ffmpegCmds | Array | Add any other ffmpeg commands as a array. Make sure they are String values.
-| @param    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
+| Yes      | video       | String or Buffer | Video path as a string or a buffer of the video
+| No      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
+| Yes      | chapters       | Array<ListVideo_Object>| List of chapters you want to extract from original video get this from "getVideoList()" function
+| No   | DisableDownloadLogs | Boolean | True = disable download logs, false = show download logs. **(default is false)**
+| No    | ffmpegOptions | Object | FFmpeg commands and options.
+| No    | ffmpegOptions.crf | String | Quality of the video. Lower numbers the better looking the video. **(default is 25)**
+| No    | ffmpegOptions.preset | String | Speed of encoding video. **(default is ultrafast)**
+| No    | ffmpegOptions.ffmpegCmds | Array | Add any other ffmpeg commands as a array. Make sure they are String values.
+| No    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
 
 ### **@Returns**
 
