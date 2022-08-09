@@ -28,7 +28,7 @@ module.exports.trimVideo = async function ({
     //Check original video is buffer or path
     let videoPath = OGvideo;
     if (Buffer.isBuffer(OGvideo)) {
-        fs.writeFileSync("./ffmpeg/tmp/input.mp4", OGvideo);
+        fs.writeFileSync(path.resolve("./ffmpeg/tmp/input.mp4"), OGvideo);
         videoPath = path.resolve("./ffmpeg/tmp/input.mp4");
     }
 
@@ -46,7 +46,7 @@ module.exports.trimVideo = async function ({
                 "-crf", crf,
                 "-preset", preset,
                 "-c:a", "copy",
-                path.resolve(path.join(__dirname, "tmp", "output.mp4"))
+                path.resolve(path.join("ffmpeg", "tmp", "output.mp4"))
             ];
 
             //Add more onto args for ffmpeg

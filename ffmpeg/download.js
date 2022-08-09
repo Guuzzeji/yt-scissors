@@ -39,7 +39,7 @@ function filterAsset(asset) {
 module.exports.ffmpegDownload = async function (logging) {
     //* Get ffmpeg from https://github.com/BtbN/FFmpeg-Builds
     const user = 'BtbN';
-    const dir = "./ffmpeg/tmp";
+    const dir = path.resolve("./ffmpeg/tmp");
     const repo = 'FFmpeg-Builds';
     const leaveZipped = false;
     const disableLogging = logging || false;
