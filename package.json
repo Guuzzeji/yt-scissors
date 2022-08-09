@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git://github.com/Guuzzeji/yt-scissors.git"
   },
-  "author": "Guuzzeji <gabe.business.code@outlook.com> (https://github.com/Guuzzeji",
+  "author": "Guuzzeji <gabe.business.code@outlook.com> (https://github.com/Guuzzeji)",
   "license": "MIT",
   "dependencies": {
     "@freetube/yt-comment-scraper": "^6.1.0",
