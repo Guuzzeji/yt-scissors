@@ -1,5 +1,5 @@
 {
-  "name": "@guuzzeji/yt-scissors",
+  "name": "yt-scissors",
   "version": "1.0.0",
   "description": "A simple api (npm library) that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Created using FFmpeg, ytd-core, and freetube.",
   "main": "index.js",
