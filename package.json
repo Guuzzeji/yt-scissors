@@ -31,9 +31,6 @@
     "url": "https://github.com/Guuzzeji/yt-scissors/issues"
   },
   "homepage": "https://github.com/Guuzzeji/yt-scissors#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
