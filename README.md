@@ -144,6 +144,8 @@ cutVideo ({
 
 > **(Important)** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself.
 
+> **FFmpeg Downloads** : https://ffmpeg.org/download.html
+
 * Using FFmpeg, trims videos into different chapters and encodes theme base on the time codes given.
 * Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
 * **Return** a array of videos with title and a buffer of the trim down video
