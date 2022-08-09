@@ -32,7 +32,7 @@ async function createTimeStamps(url, text) {
 
             //Grabs what it thinks it is timestamp and cleans it
             let time_code = lines[i].replace(/[^0-9:]/, "");
-            time_code = time_code.replaceAll(/[a-zA-Z()]/g, "");
+            time_code = time_code.replaceAll(/[a-zA-Z()'"]/g, "").trim();
 
             //remove if ":" is on first number 
             if (time_code[0] == ":") {
@@ -56,6 +56,7 @@ async function createTimeStamps(url, text) {
                 } else {
                     time_code = time_code.slice(0, time_code.search(":") + 3);
                     time_code = time_code.slice((time_code.search(":") - 1), time_code.length);
+
                 }
 
                 //Export to json
@@ -63,7 +64,7 @@ async function createTimeStamps(url, text) {
                     // Cleans title to be ready to be save as file:
                     // lines[i].replaceAll(/:/g, ".").replaceAll(/#%&{}<>*?$!'":@`+=|/g, "").trim()
                     let json = {
-                        title: lines[i].trim(),
+                        title: lines[i].replaceAll(/[0-9:~"';~`_+=]/g, "").trim(),
                         start_time: time_code.trim()
                     };
                     timeStamps.push(json);
