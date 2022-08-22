@@ -1,6 +1,6 @@
 {
   "name": "yt-scissors",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple api (npm library) that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Created using FFmpeg, ytd-core, and freetube.",
   "main": "index.js",
   "files": [
@@ -25,13 +25,12 @@
   "dependencies": {
     "@freetube/yt-comment-scraper": "^6.1.0",
     "@terascope/fetch-github-release": "^0.8.7",
-    "ytdl-core": "^4.11.0"
+    "ytdl-core": "^4.10.0"
   },
   "bugs": {
     "url": "https://github.com/Guuzzeji/yt-scissors/issues"
   },
   "homepage": "https://github.com/Guuzzeji/yt-scissors#readme",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
