@@ -1,30 +1,32 @@
 <p align="center">
-    <img src="./assets/1280px-Scissors_icon_black.svg.png" height="150">
+    <img src="./assets/logo-upscale.jpeg" height="100%">
 </p>
 
-<h1 align="center">yt-scissors</h1>
+<h1 align="center">YouTube-Scissors</h1>
 
+A simple api (npm library) that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps.
 
-A simple api that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps.
+## 💡 Features
 
-
-## Features
-
-> **Important** : You must either have the video already downloaded or have a Buffer of the video for this api to work.
+> **Important:** You must either have the video already downloaded or have a Buffer of the video for this api to work.
 
 - Can generate time codes from a YouTube video's chapters, comment, or description
+
 - Built on top of ffmpeg
+
 - Will automatically download ffmpeg for your current operating system
-- Can generate either a whole folder of videos or extracte a single video from a YouTube video 
+  - **Note:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
+
+- Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
 
 
-## Install
+## 🚀 Install
 
 ```console 
 npm install yt-scissors
 ```
 
-## Example / Usage
+## Example & Usage
 
 ```js
 const { getTimeStampList, cutVideo } = require('yt-scissors');
@@ -37,7 +39,9 @@ async function main() {
     // Comment: "https://www.youtube.com/watch?v=89UEYbkHKvg&lc=UgzcUK560Nm4FAxF8-d4AaABAg"
     // Description: "https://www.youtube.com/watch?v=GdzrrWA8e7A"
 
-    let list = await getTimeStampList({ url: "https://www.youtube.com/watch?v=iPtPo8Sa3NE", type: "chapters" });
+    let list = await getTimeStampList({ 
+        url: "https://www.youtube.com/watch?v=iPtPo8Sa3NE", 
+        type: "chapters" });
     
     //Will output a array of time codes and video titles
     console.log(list);
@@ -59,53 +63,55 @@ async function main() {
 main();
 ```
 
-<br>
+# 📖 API Documentation
 
-# API
+## getTimeStampList(...)
 
-"getTimeStampList" 
-------------------
+**Description**
 
-> **(Important)** Generated time codes from description and comment works about 85% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
+* Picks where to get video time codes and generate array from that.
+  
+* Can generate time codes from a video's chapters, comment, or description.
+
+> **Important:** Generated time stamps from the description and comments works about 85% of the time. Make sure the video's time stamps are spaced out and have nothing that would make it hard to find them. There is also a bug with any video that is +10 hours long, so video length should be below 10 hours.
 
 ```js
-getTimeStampList({url: String, type: "chapters" | "comment" | "description" })
+getTimeStampList({
+    url: String, 
+    type: "chapters" | "comment" | "description" })
 ```
 
 | Required      | Name | Data Type | Description |
 | ----------- | ----------- | ----------- | ----------- 
-| Yes      | url       | String | Url of YouTube video
+| Yes      | url       | String | URL of YouTube video
 | Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time codes. **(default is "chapters")**
 
-### **@Returns**
+## Returns
 
 `@return {Promise<Array<ListVideo_Object>>}` 
 - Returns array of start and end time for each chapter video. **Will return empty array if time code couldn't be generated.**
 
-
-**What a object from the array will look like** 
-
-```json
+**ListVideo_Object Example:** 
+```js
 "ListVideo_Object": {
-    "title": "{String} Title of the chapter",
-    "start_time": "{String|Number} Start time code of the chapter",
-    "end_time": "{String|Number} End time code of the chapter"
+    title: "{String}", // Title of the chapter
+    start_time: "{String or Number}", // Start time code of the chapter
+    end_time: "{String or Number}" // End time code of the chapter
 }
 ```
 
-**What Does it do?**
+## cutVideo(...)
 
-* Picks where to get video time codes and generate array from that.
-* Can generate time codes from a video's chapters, comment, or description.
+**Description**
+* Using FFmpeg, trims videos into different chapters and encodes theme base on the time codes given.
+  
+* Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
+  
+* **Return** a array of videos with title and a buffer of the trim down video
 
-<br>
 
-"cutVideo"
-----------
+> **Important:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
 
-> **(Important)** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself.
-
-> **FFmpeg Downloads** : https://ffmpeg.org/download.html
 
 ```js
 cutVideo ({
@@ -133,34 +139,24 @@ cutVideo ({
 | No    | ffmpegOptions.ffmpegCmds | Array | Add any other ffmpeg commands as a array. Make sure they are String values.
 | No    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
 
-### **@Returns**
+## Returns
 
 `@returns {Promise<Array<SaveVideos_Object>>}` 
 - Returns array object of videos. Videos are store as buffers.
 
+**SaveVideos_Object Example:** 
 
-**What a object from the array will look like** 
-
-```json
+```js
 "SaveVideos_Object": {
-    "title": "{String} Title of the chapter",
-    "videoData": "{Buffer} A buffer of the chapter video"
+    title: "{String}", // Title of the chapter
+    videoData: "{Buffer}" // A buffer of the chapter video
 }
 ```
 
+----
+### Helpful Infomation
 
-**What does it do?**
+- [How to find a YouTube comment URL from a video](https://www.youtube.com/watch?v=PnmfkLiMLHs)
 
-* Using FFmpeg, trims videos into different chapters and encodes theme base on the time codes given.
-* Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
-* **Return** a array of videos with title and a buffer of the trim down video
-
-<br>
-
-# Helpful Infomation
-
-How to find / get a YouTube comment url from a video : https://www.youtube.com/watch?v=PnmfkLiMLHs
-
-
-# License
+### License
 MIT
