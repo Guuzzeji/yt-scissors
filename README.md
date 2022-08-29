@@ -81,6 +81,7 @@ main();
 * Can generate time stamps from a video's chapters, comment, or description.
 
 ```js
+// getTimeStampList(...) add default values
 getTimeStampList({
     url: String, 
     type: "chapters" | "comment" | "description" })
@@ -119,6 +120,7 @@ getTimeStampList({
 * **Returns** a array of videos with title and a buffer of the trim down video
 
 ```js
+// cutVideo(...) add default values
 cutVideo ({
     video,
     ffmpegPath = undefined,
@@ -135,7 +137,7 @@ cutVideo ({
 | Required      | Name        | Data Type   | Description
 | ----------- | ----------- | ----------- | ----------- |
 | Yes      | video       | String or Buffer | Video path as a string or a buffer of the video
-| No      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
+| No      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to undefined, null, or you don't pass in a string path. **(default is undefined)**
 | Yes      | chapters       | Array<ListVideo_Object>| List of chapters you want to extract from original video get this from getVideoList(...) function
 | No   | DisableDownloadLogs | Boolean | True = disable download logs, false = show download logs. **(default is false)**
 | No    | ffmpegOptions | Object | FFmpeg commands and options.
@@ -159,8 +161,24 @@ cutVideo ({
 ```
 
 ----
-### Helpful Infomation
+## Helpful Infomation & Example Code
 
+**Code**
+```js
+// ( Example 1 ) Using the ffmpegCmds in cutVideo(...) 
+await cutVideo({
+    video: "Some Buffer of YouTube Video",
+    DisableDownloadLogs: false,
+    chapters: [list[4]],
+    ffmpegOptions: {
+        crf: "3",
+        //Note: What -hide_banner -loglevel debug commands will look like in the array
+        ffmpegCmds: ["-hide_banner", "-loglevel", "debug"]
+    },
+});
+```
+
+**Infomation**
 - [How to find a YouTube comment URL from a video](https://www.youtube.com/watch?v=PnmfkLiMLHs)
 
 ### License
