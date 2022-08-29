@@ -68,8 +68,11 @@ async function main() {
 
 main();
 ```
+<br>
 
 # 📖 API Documentation
+
+<br>
 
 ## getTimeStampList(...)
 
@@ -107,6 +110,7 @@ getTimeStampList({
     end_time: "{String or Number}" // End time stamps of the chapter
 }
 ```
+<br>
 
 ## cutVideo(...)
 
@@ -157,6 +161,8 @@ cutVideo ({
     videoData: "{Buffer}" // A buffer of the chapter video
 }
 ```
+
+<br>
 
 # 🗿 Helpful Infomation & Example Code
 
