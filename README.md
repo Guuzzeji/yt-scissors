@@ -93,9 +93,8 @@ getTimeStampList({
 | Yes      | url       | String | URL of YouTube video
 | Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time stamps. **(default is "chapters")**
 
-## Returns
+### Returns { Promise<Array<ListVideo_Object>> }
 
-`@return {Promise<Array<ListVideo_Object>>}` 
 - Returns array of start and end time for each chapter video. 
 
 - **Note:** Will return a empty array if time stamps couldn't be generated
@@ -147,10 +146,8 @@ cutVideo ({
 | No    | ffmpegOptions.ffmpegCmds | Array | Add any other ffmpeg commands as a array. Make sure they are String values.
 | No    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
 
-## Returns
-
-`@returns {Promise<Array<SaveVideos_Object>>}` 
-- Returns array object of videos. Videos are store as buffers.
+### Returns { Promise<Array<SaveVideos_Object>> }
+- Returns an array object of videos. Videos are store as buffers.
 
 **SaveVideos_Object Example:** 
 
