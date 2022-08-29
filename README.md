@@ -131,7 +131,7 @@ cutVideo ({
 | ----------- | ----------- | ----------- | ----------- |
 | Yes      | video       | String or Buffer | Video path as a string or a buffer of the video
 | No      | ffmpegPath     | String | Path to ffmpeg executable. If none is given then will automatically download ffmpeg. FFmpeg will be downloaded if variable is set to "undefined", "null", or  "". **(default is undefined)**
-| Yes      | chapters       | Array<ListVideo_Object>| List of chapters you want to extract from original video get this from "getVideoList()" function
+| Yes      | chapters       | Array<ListVideo_Object>| List of chapters you want to extract from original video get this from getVideoList(...) function
 | No   | DisableDownloadLogs | Boolean | True = disable download logs, false = show download logs. **(default is false)**
 | No    | ffmpegOptions | Object | FFmpeg commands and options.
 | No    | ffmpegOptions.crf | String | Quality of the video. Lower numbers the better looking the video. **(default is 25)**
