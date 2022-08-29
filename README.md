@@ -12,6 +12,8 @@ If you are looking for a CLI verison of this library look [here](https://github.
 
 - Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
   - **Important:** For this library to work you must either have the YouTube video already downloaded or have a Buffer of the YouTube video
+  
+  - **Note:** For comments, follow this [tutorial](https://www.youtube.com/watch?v=PnmfkLiMLHs) to figure out how to get a YouTube comment's URL.
 
 - Will automatically download ffmpeg for your current operating system
   - **Note:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
