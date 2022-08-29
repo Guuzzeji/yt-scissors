@@ -16,7 +16,7 @@ If you are looking for a CLI verison of this library look [here](https://github.
 - Will automatically download ffmpeg for your current operating system
   - **Note:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
 
-- Can generate time codes from a YouTube video's chapters, comment, or description.
+- Can generate time stamps from a YouTube video's chapters, comment, or description.
 
 - You can use this libary on top of any YouTube download API.
 
@@ -47,7 +47,7 @@ async function main() {
         url: "https://www.youtube.com/watch?v=iPtPo8Sa3NE", 
         type: "chapters" });
     
-    //Will output a array of time codes and video titles
+    //Will output a array of time stamps and video titles
     console.log(list);
 
     //Will generate a video from the 5th video in the array
@@ -73,9 +73,9 @@ main();
 
 **Description**
 
-* Picks where to get video time codes and generate array from that.
+* Picks where to get video time stamps and generate array of time stamps from that.
   
-* Can generate time codes from a video's chapters, comment, or description.
+* Can generate time stamps from a video's chapters, comment, or description.
 
 > **Important:** Generated time stamps from the description and comments works about 85% of the time. Make sure the video's time stamps are spaced out and have nothing that would make it hard to find them. There is also a bug with any video that is +10 hours long, so video length should be below 10 hours.
 
@@ -88,12 +88,14 @@ getTimeStampList({
 | Required      | Name | Data Type | Description |
 | ----------- | ----------- | ----------- | ----------- 
 | Yes      | url       | String | URL of YouTube video
-| Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time codes. **(default is "chapters")**
+| Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time stamps. **(default is "chapters")**
 
 ## Returns
 
 `@return {Promise<Array<ListVideo_Object>>}` 
-- Returns array of start and end time for each chapter video. **Will return empty array if time code couldn't be generated.**
+- Returns array of start and end time for each chapter video. 
+
+- **Note:** Will return a empty array if time code couldn't be generated
 
 **ListVideo_Object Example:** 
 ```js
@@ -107,11 +109,11 @@ getTimeStampList({
 ## cutVideo(...)
 
 **Description**
-* Using FFmpeg, trims videos into different chapters and encodes theme base on the time codes given.
+* Using FFmpeg, trims videos into different chapters and encodes theme base on the time stamps given.
   
 * Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
   
-* **Return** a array of videos with title and a buffer of the trim down video
+* **Returns** a array of videos with title and a buffer of the trim down video
 
 
 > **Important:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
