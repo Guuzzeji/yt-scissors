@@ -22,8 +22,6 @@ If you are looking for a CLI verison of this library look [here](https://github.
 
 - You can use this libary on top of any YouTube download API.
 
-- Built on top of ffmpeg
-
 - 100% Open Source (MIT license)
 
 ## 🚀 Install
