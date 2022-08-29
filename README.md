@@ -172,7 +172,7 @@ await cutVideo({
     chapters: [list[4]],
     ffmpegOptions: {
         crf: "3",
-        //Note: What -hide_banner -loglevel debug commands will look like in the array
+        //Note: What "-hide_banner -loglevel debug" commands will look like in the array
         ffmpegCmds: ["-hide_banner", "-loglevel", "debug"]
     },
 });
