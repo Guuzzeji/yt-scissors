@@ -4,7 +4,7 @@
 
 <h1 align="center">YouTube-Scissors (npm library)</h1>
 
-A simple npm library that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of ffmpeg and JavaScript.
+A simple npm library that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of FFmpeg and JavaScript.
 
 If you are looking for a CLI verison of this library look [here](https://github.com/Guuzzeji/youtube-scissors-cli).
 
