@@ -4,23 +4,25 @@
 
 <h1 align="center">YouTube-Scissors</h1>
 
-A simple api (npm library) that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of ffmpeg and JavaScript / Node.js.
+A simple api (npm library) that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of ffmpeg and JavaScript.
 
 If you are looking for a CLI verison of this library look [here](https://github.com/Guuzzeji/youtube-scissors-cli)
 
 ## 💡 Features
 
-> **Important:** You must either have the video already downloaded or have a Buffer of the video for this api to work.
-
-- Can generate time codes from a YouTube video's chapters, comment, or description
-
-- Built on top of ffmpeg
+- Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
+  - **Important:** For this library to work you must either have the YouTube video already downloaded or have a Buffer of the YouTube video
 
 - Will automatically download ffmpeg for your current operating system
   - **Note:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
 
-- Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
+- Can generate time codes from a YouTube video's chapters, comment, or description.
 
+- You can use this libary on top of any YouTube download API.
+
+- Built on top of ffmpeg
+
+- 100% Open Source (MIT license)
 
 ## 🚀 Install
 
