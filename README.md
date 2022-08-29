@@ -161,7 +161,6 @@ cutVideo ({
 }
 ```
 
-----
 ## Helpful Infomation & Example Code
 
 **Example Code**
