@@ -163,7 +163,7 @@ cutVideo ({
 ----
 ## Helpful Infomation & Example Code
 
-**Code**
+**Example Code**
 ```js
 // ( Example 1 ) Using the ffmpegCmds in cutVideo(...) 
 await cutVideo({
@@ -178,7 +178,7 @@ await cutVideo({
 });
 ```
 
-**Infomation**
+**Helpful Infomation**
 - [How to find a YouTube comment URL from a video](https://www.youtube.com/watch?v=PnmfkLiMLHs)
 
 ### License
