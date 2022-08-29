@@ -81,10 +81,11 @@ main();
 * Can generate time stamps from a video's chapters, comment, or description.
 
 ```js
-// getTimeStampList(...) add default values
+// getTimeStampList(...) all default values
 getTimeStampList({
-    url: String, 
-    type: "chapters" | "comment" | "description" })
+    url: String,
+    type: "chapters" | "comment" | "description" // default is "chapters"  
+})
 ```
 
 | Required      | Name | Data Type | Description |
@@ -120,7 +121,7 @@ getTimeStampList({
 * **Returns** a array of videos with title and a buffer of the trim down video
 
 ```js
-// cutVideo(...) add default values
+// cutVideo(...) all default values
 cutVideo ({
     video,
     ffmpegPath = undefined,
