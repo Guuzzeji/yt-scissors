@@ -94,14 +94,14 @@ getTimeStampList({
 `@return {Promise<Array<ListVideo_Object>>}` 
 - Returns array of start and end time for each chapter video. 
 
-- **Note:** Will return a empty array if time code couldn't be generated
+- **Note:** Will return a empty array if time stamps couldn't be generated
 
 **ListVideo_Object Example:** 
 ```js
 "ListVideo_Object": {
     title: "{String}", // Title of the chapter
-    start_time: "{String or Number}", // Start time code of the chapter
-    end_time: "{String or Number}" // End time code of the chapter
+    start_time: "{String or Number}", // Start time stamps of the chapter
+    end_time: "{String or Number}" // End time stamps of the chapter
 }
 ```
 
