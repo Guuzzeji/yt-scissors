@@ -1,4 +1,7 @@
-name: Bump version & Release
+name: "Bump version & Release"
+
+# How to use notes
+# - https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/managing-tags
 
 on:
   push:
