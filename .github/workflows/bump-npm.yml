@@ -17,8 +17,10 @@ jobs:
         with:
           node-version: '14.x'
       
-      - name: NPM bump version
+      - name: Checkout@v2
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Bump npm version
         run: npm version ${{env.RELEASE_VERSION}}
