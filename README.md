@@ -26,7 +26,7 @@ If you are looking for a CLI version of this library look [here](https://github.
 
 ## 🚀 Install
 
-```console 
+```console
 npm install yt-scissors
 ```
 
@@ -66,6 +66,7 @@ async function main() {
 
 main();
 ```
+
 <br>
 
 # 📖 API Documentation
@@ -77,11 +78,11 @@ main();
 **Description:**
 >**Important:** Generated time stamps from the description and comments works about 85% of the time. Make sure the video's time stamps are spaced out and have nothing that would make it hard to find them. There is also a bug with any video that is +10 hours long, so video length should be below 10 hours.
 
-* Picks where to get video time stamps and generate array of time stamps from that.
+- Picks where to get video time stamps and generate array of time stamps from that.
   
-* Can generate time stamps from a video's chapters, comment, or description.
+- Can generate time stamps from a video's chapters, comment, or description.
 
-* **Returns** an array of start and end time for each chapter video. 
+- **Returns** an array of start and end time for each chapter video.
 
 ```js
 // getTimeStampList(...) all default values
@@ -92,17 +93,18 @@ getTimeStampList({
 ```
 
 | Required      | Name | Data Type | Description |
-| ----------- | ----------- | ----------- | ----------- 
+| ----------- | ----------- | ----------- | -----------
 | Yes      | url       | String | URL of YouTube video
 | Yes      | type        | "chapters" or "comment" or "description" | The data you want to parse to get video time stamps. **(default is "chapters")**
 
 ### Returns { Promise<Array<ListVideo_Object>> }
 
-- Returns an array of start and end time for each chapter video. 
+- Returns an array of start and end time for each chapter video.
 
 - **Note:** Will return a empty array if time stamps couldn't be generated
 
-**ListVideo_Object Example:** 
+**ListVideo_Object Example:**
+
 ```js
 "ListVideo_Object": {
     title: "{String}", // Title of the chapter
@@ -110,6 +112,7 @@ getTimeStampList({
     end_time: "{String or Number}" // End time stamps of the chapter
 }
 ```
+
 <br>
 
 ## cutVideo(...)
@@ -117,11 +120,11 @@ getTimeStampList({
 **Description:**
 > **Important:** Cannot automatically download ffmpeg for MacOS. You have to download and add it yourself. [FFmpeg Downloads]( https://ffmpeg.org/download.html)
 
-* Using FFmpeg, trims videos into different chapters and encodes theme base on the time stamps given.
+- Using FFmpeg, trims videos into different chapters and encodes theme base on the time stamps given.
   
-* Can automatically download ffmpeg for current operating system, or you can manually install ffmpeg, and give the path to it.
+- Can automatically download ffmpeg for current operating system, or you can manually install ffmpeg, and give the path to it.
   
-* **Returns** an array of videos with title and a buffer of the trim down video
+- **Returns** an array of videos with title and a buffer of the trim down video
 
 ```js
 // cutVideo(...) all default values
@@ -151,9 +154,10 @@ cutVideo ({
 | No    | ffmpegOptions.ffmpegHide | Boolean | Hide ffmpeg process from being shown in the terminal. **(default is false)**
 
 ### Returns { Promise<Array<SaveVideos_Object>> }
+
 - Returns an array object of videos. Videos are store as buffers.
 
-**SaveVideos_Object Example:** 
+**SaveVideos_Object Example:**
 
 ```js
 "SaveVideos_Object": {
@@ -167,6 +171,7 @@ cutVideo ({
 # 🗿 Helpful Infomation & Example Code
 
 ### Example Code
+
 ```js
 // ( Example 1 ) Using the ffmpegCmds in cutVideo(...) 
 await cutVideo({
@@ -182,7 +187,9 @@ await cutVideo({
 ```
 
 ### Helpful Infomation
+
 - [How to find a YouTube comment URL from a video](https://www.youtube.com/watch?v=PnmfkLiMLHs)
 
 ### License
+
 MIT
