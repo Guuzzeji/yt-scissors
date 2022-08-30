@@ -25,7 +25,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Bump version
-        run: npm version ${{env.RELEASE_VERSION}}
+        run: npm --no-git-tag-version version ${{env.RELEASE_VERSION}}
       - name: Push to github repository
         run: |
           git commit -m "GitAction: Updated version to ${{env.RELEASE_VERSION}}"
