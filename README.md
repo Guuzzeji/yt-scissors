@@ -6,12 +6,12 @@
 
 A simple npm library that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of FFmpeg and JavaScript.
 
-If you are looking for a CLI verison of this library look [here](https://github.com/Guuzzeji/youtube-scissors-cli).
+If you are looking for a CLI version of this library look [here](https://github.com/Guuzzeji/youtube-scissors-cli).
 
 ## 💡 Features
 
 - Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
-  - **Important:** For this library to work you must either have the YouTube video already downloaded or have a Buffer of the YouTube video
+  - **Important:** For this library to work, you must either have the YouTube video already downloaded or have a Buffer of the YouTube video
   
   - **Note:** For comments, follow this [tutorial](https://www.youtube.com/watch?v=PnmfkLiMLHs) to figure out how to get a YouTube comment's URL.
 
@@ -20,7 +20,7 @@ If you are looking for a CLI verison of this library look [here](https://github.
 
 - Can generate time stamps from a YouTube video's chapters, comment, or description.
 
-- You can use this libary on top of any YouTube download API.
+- You can use this libary on top of any YouTube download libary / API.
 
 - 100% Open Source (MIT license)
 
@@ -96,7 +96,7 @@ getTimeStampList({
 
 ### Returns { Promise<Array<ListVideo_Object>> }
 
-- Returns array of start and end time for each chapter video. 
+- Returns an array of start and end time for each chapter video. 
 
 - **Note:** Will return a empty array if time stamps couldn't be generated
 
@@ -117,9 +117,9 @@ getTimeStampList({
 
 * Using FFmpeg, trims videos into different chapters and encodes theme base on the time stamps given.
   
-* Can automatically download ffmpeg for current operating system or you can manually install ffmpeg, and give the path to it.
+* Can automatically download ffmpeg for current operating system, or you can manually install ffmpeg, and give the path to it.
   
-* **Returns** a array of videos with title and a buffer of the trim down video
+* **Returns** an array of videos with title and a buffer of the trim down video
 
 ```js
 // cutVideo(...) all default values
