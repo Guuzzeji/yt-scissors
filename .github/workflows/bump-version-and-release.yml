@@ -31,12 +31,12 @@ jobs:
           git commit -m "GitAction: Updated version to ${{env.RELEASE_VERSION}}"
           git push origin ${{env.RELEASE_VERSION}} --force
 
-  Release:
-    name: Create Release & Changelog
-    runs-on: ubuntu-latest
-    steps:
-      - name: Creating Release & Changelog
-        uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GIT_TOKEN }}"
-          prerelease: false
+  # Release:
+  #   name: Create Release & Changelog
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Creating Release & Changelog
+  #       uses: "marvinpinto/action-automatic-releases@latest"
+  #       with:
+  #         repo_token: "${{ secrets.GIT_TOKEN }}"
+  #         prerelease: false
