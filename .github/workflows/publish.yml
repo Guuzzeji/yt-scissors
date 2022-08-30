@@ -1,13 +1,9 @@
 name: Publish to NPM
 
-# Semantic-Release Docs
-# https://github.com/semantic-release/semantic-release/tree/master/docs
-
 on:
-  push:
-    branches:
-      - main
-
+  release:
+    types: [created]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,8 +17,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies and build 🔧
         run: npm install
-      - name: Release & Publish package on NPM 📦
+      - name: Publish package on NPM 📦
+        run: npm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
