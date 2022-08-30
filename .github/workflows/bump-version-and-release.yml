@@ -10,6 +10,7 @@ on:
 
 jobs:
   Bump-version:
+    name: Bump package.json version
     runs-on: ubuntu-latest
     steps:
       - name: Get version name
@@ -31,9 +32,10 @@ jobs:
           git push origin ${{env.RELEASE_VERSION}} --force
 
   Create-release:
+    name: Create Release & Changelog
     runs-on: ubuntu-latest
     steps:
-      - name: Create Release & Changelog
+      - name: Creating Release & Changelog
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GIT_TOKEN }}"
