@@ -81,6 +81,8 @@ main();
   
 * Can generate time stamps from a video's chapters, comment, or description.
 
+* **Returns** an array of start and end time for each chapter video. 
+
 ```js
 // getTimeStampList(...) all default values
 getTimeStampList({
