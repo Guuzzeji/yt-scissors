@@ -6,7 +6,7 @@ name: Bump version and Release
 on:  
   push:
     tags:
-      - '*'
+      - 'v*'
 
 jobs:
   Bump:
