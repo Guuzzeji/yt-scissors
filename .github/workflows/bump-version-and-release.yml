@@ -27,7 +27,7 @@ jobs:
         run: npm version ${{env.RELEASE_VERSION}}
       - name: Push to github repository
         run: |
-          git commit -m "GitAction: Updated package version to ${{env.RELEASE_VERSION}}"
+          git commit -m "GitAction: Updated version to ${{env.RELEASE_VERSION}}"
           git push origin ${{env.RELEASE_VERSION}} --force
 
   Create-release:
