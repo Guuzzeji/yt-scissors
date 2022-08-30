@@ -1,0 +1,24 @@
+name: tagged-release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  Bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      
+      - name: NPM bump version
+        uses: actions/checkout@v2
+          with:
+            token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        run: npm version ${{env.RELEASE_VERSION}}
