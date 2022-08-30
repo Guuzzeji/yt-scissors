@@ -27,13 +27,13 @@ jobs:
         run: npm version ${{env.RELEASE_VERSION}}
       - name: Push to github repository
         run: |
-          git commit -m "BOT: updated package version to ${{env.RELEASE_VERSION}}"
+          git commit -m "GitAction: Updated package version to ${{env.RELEASE_VERSION}}"
           git push origin ${{env.RELEASE_VERSION}} --force
 
   Create-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Release build
+      - name: Create Release & Changelog
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GIT_TOKEN }}"
