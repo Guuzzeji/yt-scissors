@@ -13,9 +13,6 @@ jobs:
     name: Bump Package Version
     runs-on: ubuntu-latest
     steps:
-      - name: Example variable usage
-        run: git tag ${{ github.event.inputs.version }}
-      
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
