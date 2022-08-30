@@ -19,6 +19,6 @@ jobs:
       
       - name: NPM bump version
         uses: actions/checkout@v2
-          with:
-            token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         run: npm version ${{env.RELEASE_VERSION}}
