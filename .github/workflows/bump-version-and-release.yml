@@ -10,7 +10,6 @@ on:
 
 jobs:
   Bump:
-    name: Bump package.json version
     runs-on: ubuntu-latest
     steps:
       - name: Get version name
