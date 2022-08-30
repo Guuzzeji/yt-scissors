@@ -6,7 +6,7 @@ name: "Bump version & Release"
 on:
   push:
     tags:
-      - "v*"
+    - "v*"
 
 jobs:
   Bump:
