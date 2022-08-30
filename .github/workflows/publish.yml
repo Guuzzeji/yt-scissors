@@ -6,7 +6,7 @@ name: Publish to NPM
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies and build 🔧
         run: npm install
       - name: Release & Publish package on NPM 📦
-        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
