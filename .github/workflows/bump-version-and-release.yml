@@ -3,13 +3,13 @@ name: Bump version and Release
 # How to use notes
 # - https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/managing-tags
 
-on:
+on:  
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
-  Bump-version:
+  Bump:
     name: Bump package.json version
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,7 @@ jobs:
           git commit -m "GitAction: Updated version to ${{env.RELEASE_VERSION}}"
           git push origin ${{env.RELEASE_VERSION}} --force
 
-  Create-release:
+  Release:
     name: Create Release & Changelog
     runs-on: ubuntu-latest
     steps:
