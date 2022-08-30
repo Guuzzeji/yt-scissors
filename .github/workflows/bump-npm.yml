@@ -20,7 +20,7 @@ jobs:
       - name: Checkout@v2
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
 
       - name: Bump npm version
         run: npm version ${{env.RELEASE_VERSION}}
