@@ -34,6 +34,7 @@ jobs:
           git push origin ${{env.RELEASE_VERSION}} --force
 
   Release:
+    needs: Bump
     name: Create Release & Changelog
     runs-on: ubuntu-latest
     steps:

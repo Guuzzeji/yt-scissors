@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  Upload-to-npm:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
