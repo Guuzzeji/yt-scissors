@@ -1,4 +1,4 @@
-name: Publish to NPM & Release
+name: Update ytdl-core package
 
 on: workflow_dispatch
 
