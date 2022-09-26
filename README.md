@@ -20,7 +20,7 @@ If you are looking for a CLI version of this library look [here](https://github.
 
 - Can generate time stamps from a YouTube video's chapters, comment, or description.
 
-- You can use this libary on top of any YouTube download libary / API.
+- You can use this library on top of any YouTube download library / API.
 
 - 100% Open Source (MIT license)
 
