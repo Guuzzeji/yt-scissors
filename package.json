@@ -25,7 +25,7 @@
   "dependencies": {
     "@freetube/yt-comment-scraper": "^6.2.0",
     "@terascope/fetch-github-release": "^0.8.7",
-    "ytdl-core": "^4.11.1"
+    "ytdl-core": "^4.11.2"
   },
   "bugs": {
     "url": "https://github.com/Guuzzeji/yt-scissors/issues"
