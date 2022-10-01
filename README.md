@@ -4,6 +4,20 @@
 
 <h1 align="center">YouTube-Scissors</h1>
 
+
+<p align="center">
+    <img alt="GitHub" src="https://img.shields.io/github/license/Guuzzeji/yt-scissors">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Guuzzeji/yt-scissors">
+    <img alt="npm" src="https://img.shields.io/npm/dm/yt-scissors">
+    <img alt="node-current" src="https://img.shields.io/node/v/yt-scissors">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Guuzzeji/yt-scissors">
+</p>
+
+<p align="center">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/yt-scissors?style=social">
+    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fyt-scissors">
+</p>
+
 A simple npm library that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of FFmpeg and JavaScript.
 
 If you are looking for a CLI version of this library look [here](https://github.com/Guuzzeji/youtube-scissors-cli).
