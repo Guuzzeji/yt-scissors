@@ -20,7 +20,7 @@ jobs:
       - run: git config --global user.name ${{ secrets.GH_USERNAME }}
       - run: git config --global user.email ${{ secrets.GH_EMAIL }}
       - run: npm version ${{ github.event.inputs.version }} -m "[RELEASE] bump package to ${{ github.event.inputs.version }}"
-      - run: git push origin --tags
+      - run: git push
 
   Release:
     needs: bump-version
