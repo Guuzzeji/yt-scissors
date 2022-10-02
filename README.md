@@ -15,7 +15,9 @@
 
 <p align="center">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/yt-scissors?style=social">
-    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fyt-scissors">
+    <a href="https://twitter.com/intent/tweet?url=https://github.com/Guuzzeji/yt-scissors/&hashtags=youtube,github,cli,ffmpeg,programming">
+        <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fyt-scissors">
+    </a>
 </p>
 
 A simple npm library that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Built on top of FFmpeg and JavaScript.
