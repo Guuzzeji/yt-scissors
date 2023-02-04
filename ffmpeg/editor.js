@@ -90,10 +90,10 @@ module.exports.trimVideo = async function ({
 
 
     //*Run ffmpeg, trim video / encodeds them
-    timeStamps.forEach(timeStamp => {
+    timeStamps.forEach(async timeStamp => {
         let start_time = timeStamp.start_time; //Gets Times for chapters start time
         let end_time = timeStamp.end_time;  //Get end time base on chapter infront
-        
+
         let videoBuffer = await runFFmpeg(start_time, end_time).catch(function (err) {
             throw new Error(err);
         });
@@ -103,7 +103,7 @@ module.exports.trimVideo = async function ({
             videoData: videoBuffer
         });
     });
-    
+
     //Remove input file when done
     if (Buffer.isBuffer(OGvideo)) {
         fs.unlinkSync("./ffmpeg/tmp/input.mp4");
